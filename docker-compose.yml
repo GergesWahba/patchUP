@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: patchup-mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: patchup
+    volumes:
+      - mongodb_data:/data/db
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    env_file:
+      - apps/api/.env.example
+    ports:
+      - '4000:4000'
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:

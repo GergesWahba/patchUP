@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "PatchUp",
+    "slug": "patchup",
+    "scheme": "patchup",
+    "entryPoint": "./index.js",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#F5F0E7"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.patchup.mobile"
+    },
+    "android": {
+      "package": "com.patchup.mobile"
+    },
+    "plugins": ["expo-secure-store"]
+  }
+}

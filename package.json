@@ -1,0 +1,30 @@
+{
+  "name": "patchup",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/api",
+    "apps/mobile",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @patchup/shared\" \"npm run dev --workspace @patchup/api\"",
+    "dev:api": "npm run dev --workspace @patchup/api",
+    "build": "npm run build --workspace @patchup/shared && npm run build --workspace @patchup/api && npm run build --workspace @patchup/mobile",
+    "start": "npm run start --workspace @patchup/api",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "prettier --write .",
+    "seed": "npm run seed --workspace @patchup/api",
+    "mobile": "npm run dev --workspace @patchup/mobile",
+    "ios": "npm run ios --workspace @patchup/mobile",
+    "android": "npm run android --workspace @patchup/mobile"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "babel-preset-expo": "~54.0.10"
+  }
+}

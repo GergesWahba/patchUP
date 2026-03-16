@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-clay text-ink antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(201, 106, 60, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(109, 141, 115, 0.14), transparent 24%);
+}
+
+a {
+  @apply transition-colors;
+}
+
+input,
+select,
+textarea {
+  @apply outline-none;
+}
+
+.bg-grid {
+  background-size: 22px 22px;
+}
